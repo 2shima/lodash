@@ -28,7 +28,10 @@ let _ = {
         let endPad = length - string.length - startPad;
         let paddedString = ' '.repeat(startPad) + string + ' '.repeat(endPad);
         return paddedString;
-    }
+    },
+    has(object, key) {
+        return object[key] !== undefined;
+    },
 };
 
 
