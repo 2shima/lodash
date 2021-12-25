@@ -19,6 +19,15 @@ let _ = {
     words(string) {
         let words = string.split(' ');
         return words;
+    },
+    pad(string, length) {
+        if (string.length > length) {
+            return string;
+        }
+        let startPad = Math.floor((length - string.length) / 2);
+        let endPad = length - string.length - startPad;
+        let paddedString = ' '.repeat(startPad) + string + ' '.repeat(endPad);
+        return paddedString;
     }
 };
 
