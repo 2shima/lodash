@@ -32,6 +32,13 @@ let _ = {
     has(object, key) {
         return object[key] !== undefined;
     },
+    invert(object) {
+        let inverted = { };
+        for (let property in object) {
+            inverted[object[property]] = property;
+        }
+        return inverted;
+    }
 };
 
 
