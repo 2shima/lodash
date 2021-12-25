@@ -4,6 +4,18 @@ let _ = {
         clamped = Math.min(clamped, upper);
         return clamped;
     },
+    inRange(number, start, end) {
+        if (end === undefined) {
+            end = start;
+            start = 0;
+        }
+        if (start > end) {
+            let temp = start;
+            start = end;
+            end = temp;
+        }
+        return (number >= start && number < end);
+    }
 };
 
 
