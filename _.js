@@ -15,6 +15,10 @@ let _ = {
             end = temp;
         }
         return (number >= start && number < end);
+    },
+    words(string) {
+        let words = string.split(' ');
+        return words;
     }
 };
 
