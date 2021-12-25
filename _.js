@@ -1,12 +1,8 @@
 let _ = { 
     clamp(number, lower, upper) {
-        if (number < lower) {
-            return lower;
-        }
-        if (number > upper) {
-            return upper;
-        }
-        return number;
+        let clamped = Math.max(number, lower);
+        clamped = Math.min(clamped, upper);
+        return clamped;
     },
 };
 
