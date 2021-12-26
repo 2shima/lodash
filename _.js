@@ -38,6 +38,39 @@ let _ = {
             inverted[object[property]] = property;
         }
         return inverted;
+    },
+    findKey(object, predicate) {
+        for (let key in object) {
+            let value = object[key];
+            let result = predicate(value);
+            if (result) {
+                return key;
+            }
+        }
+        return undefined;
+    },
+    drop(array, n) {
+        if (n === undefined) {
+            n = 1;
+        }
+        let droppedArray = array.slice(n);
+        return droppedArray;
+    },
+    dropWhile(array, predicate) {
+        let toDrop = array.findIndex((element, index) => !(predicate(element, index, array)));
+        let droppedArray = this.drop(array, toDrop);
+        return droppedArray;
+    },
+    chunk(array, size) {
+        if (size === undefined) {
+            size = 1;
+        }
+        let chunks = [];
+        for (let i = 0; i < array.length; i += size) {
+            let arrayChunk = array.slice(i, i + size);
+            chunks.push(arrayChunk);
+        }
+        return chunks;
     }
 };
 
