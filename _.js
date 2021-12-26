@@ -38,6 +38,16 @@ let _ = {
             inverted[object[property]] = property;
         }
         return inverted;
+    },
+    findKey(object, predicate) {
+        for (let key in object) {
+            let value = object[key];
+            let result = predicate(value);
+            if (result) {
+                return key;
+            }
+        }
+        return undefined;
     }
 };
 
