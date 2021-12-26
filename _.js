@@ -60,6 +60,17 @@ let _ = {
         let toDrop = array.findIndex((element, index) => !(predicate(element, index, array)));
         let droppedArray = this.drop(array, toDrop);
         return droppedArray;
+    },
+    chunk(array, size) {
+        if (size === undefined) {
+            size = 1;
+        }
+        let chunks = [];
+        for (let i = 0; i < array.length; i += size) {
+            let arrayChunk = array.slice(i, i + size);
+            chunks.push(arrayChunk);
+        }
+        return chunks;
     }
 };
 
